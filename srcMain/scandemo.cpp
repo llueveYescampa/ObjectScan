@@ -174,9 +174,11 @@ int main(int argc, char *argv[])
 
 
 // variables used to test trlist() and trxlst()
+   constexpr unsigned int workingArraySize = 100;
    int errnum,iplist,next;
-   int intlst[100];
+   int intlst[workingArraySize];
    positiveInt lenlst, zero=0;
+   int nAll = 10;
 // End of variables used to test trlist() and trxlst()
 
 
@@ -203,7 +205,7 @@ int main(int argc, char *argv[])
       } else if (myScan.matchs_exact( "list")) {
          cout << "> got list command \n" << endl;
 //         myScan.doScan();  // this command here is optional.
-         myScan.trlist(intlst,sizeof(intlst)/sizeof(int),10,lenlst,errnum);
+         myScan.trlist(intlst,workingArraySize,nAll,lenlst,errnum);
          
          cout << "Compressed list size:" << lenlst << endl;
          cout << "errnum:" << errnum << endl;
