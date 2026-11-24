@@ -204,12 +204,14 @@ int main(int argc, char *argv[])
          cout << "> got list command \n" << endl;
 //         myScan.doScan();  // this command here is optional.
          myScan.trlist(intlst,sizeof(intlst)/sizeof(int),10,lenlst,errnum);
+         
+         cout << "Compressed list size:" << lenlst << endl;
+         cout << "errnum:" << errnum << endl;
+         cout << "Expanded List Size:" << myScan.sizlst(intlst,lenlst) << endl;
+         
          for (auto i=zero; i < lenlst ;i++ ) {
             cout << intlst[i] << endl;
          }
-         cout << "lenlst:" << lenlst << endl;
-         cout << "errnum:" << errnum << endl;
-         cout << "Size of the list:" << myScan.sizlst(intlst,lenlst) << endl;
          // Testing the sizlst function
          if (errnum == 1) {
             // not longer needed icn = 0;
